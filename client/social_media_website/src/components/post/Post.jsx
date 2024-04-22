@@ -28,6 +28,7 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
+
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
@@ -52,7 +53,7 @@ export default function Post({ post }) {
                 className="postProfileImg"
                 src={
                   user.profilePicture
-                    ? PF + user.profilePicture
+                    ? PF + "person/" + user.profilePicture
                     : PF + "person/noAvatar.jpg"
                 }
                 alt=""

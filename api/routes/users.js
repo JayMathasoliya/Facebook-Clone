@@ -5,7 +5,7 @@ const User = require("../models/User");
 
 // Update User
 router.put("/:id", async (req, res) => {
-    if (req.body.userId === req.params.id || req.body.isAdmin) {
+    if (req.body.userId === req.params.id || req.body.isAdmin === "true") {
         if (req.body.password) {
             try {
                 const salt = await bcrypt.genSalt(10);
@@ -15,8 +15,9 @@ router.put("/:id", async (req, res) => {
             }
         }
         try {
+            const { userId, isAdmin, ...data } = req.body;
             const user = await User.findByIdAndUpdate(req.params.id, {
-                $set: req.body,
+                $set: data,
             });
             if (user) {
                 res.status(200).json("Account has been updated");

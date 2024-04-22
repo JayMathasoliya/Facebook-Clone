@@ -1,0 +1,152 @@
+.messenger {
+  height: calc(100vh - 70px);
+  display: flex;
+}
+
+.chatMenu {
+  flex: 3.5;
+}
+
+.chatMenuInput {
+  width: 90%;
+  padding: 10px 0px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+}
+
+.chatBox {
+  flex: 5.5;
+}
+
+.chatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.chatBoxTop {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+.chatBoxUserTitle {
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  display: flex;
+  align-items: center;
+}
+
+.backArrowIcon{
+  margin-left: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+.chatBoxUserImgContainer {
+  margin-left: 10px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.chatBoxUserImg {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.chatBoxUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatBoxUserName {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.chatBoxOnline {
+  color: green;
+}
+
+.chatBoxBottom {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.chatMessageInput {
+  width: 80%;
+  height: 90px;
+  padding: 10px;
+}
+
+.chatSubmitButton {
+  width: 70px;
+  height: 40px;
+  border: none;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.noConversationText {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+}
+
+.chatOnline {
+  flex: 3;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  height: 100%;
+}
+
+.chatOnlineTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .messenger {
+    flex-direction: column-reverse;
+  }
+
+  .chatMenu {
+    display: none;
+  }
+
+  .chatOnline {
+    flex: 0;
+  }
+
+  .chatBox {
+    height: inherit;
+  }
+
+  .chatMessageInput {
+    width: 75%;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .chatSubmitButton {
+    width: 60px;
+    height: 30px;
+  }
+}

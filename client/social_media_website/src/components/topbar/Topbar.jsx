@@ -16,8 +16,8 @@ export default function Topbar() {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  const [showSearch, setShowSearch] = useState("false");
-  const [showMenu, setShowMenu] = useState("false");
+  const [showSearch, setShowSearch] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const logoutHandler = (e) => {
     localStorage.removeItem("user");
@@ -55,7 +55,9 @@ export default function Topbar() {
             <input
               type="text"
               placeholder="Search for friends, posts and videos"
-              className={`searchInputForMobile ${showSearch ? "" : "showSearch"}`}
+              className={`searchInputForMobile ${
+                showSearch ? "showSearch" : ""
+              }`}
             />
           </div>
         </div>
@@ -64,29 +66,31 @@ export default function Topbar() {
             <span className="topbarLink">
               <MenuIcon onClick={menuHandler} />
             </span>
-            <div className={`sidebarMobile ${showMenu ? "" : "showMenu"}`}>
+            <div className={`sidebarMobile ${showMenu ? "showMenu" : ""}`}>
               <Sidebar />
             </div>
           </div>
           <div className="topbarIcons">
             <div className="topbarIconItem">
               <PersonIcon />
-              <span className="topbarIconBadge">1</span>
+              {/* <span className="topbarIconBadge">1</span> */}
             </div>
             <div className="topbarIconItem">
+            <Link to={`/messenger`} className="chatIcon">
               <ChatIcon />
-              <span className="topbarIconBadge">2</span>
+              {/* <span className="topbarIconBadge">2</span> */}
+            </Link>
             </div>
             <div className="topbarIconItem">
               <NotificationsIcon />
-              <span className="topbarIconBadge">1</span>
+              {/* <span className="topbarIconBadge">1</span> */}
             </div>
           </div>
           <Link to={`/profile/${user.username}`}>
             <img
               src={
                 user.profilePicture
-                  ? PF + user.profilePicture
+                  ? PF + "person/" + user.profilePicture
                   : PF + "/person/noAvatar.jpg"
               }
               alt=""

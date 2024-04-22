@@ -53,7 +53,7 @@ export default function Share() {
               className="shareProfileImg"
               src={
                 user.profilePicture
-                  ? PF + user.profilePicture
+                  ? PF + "person/" + user.profilePicture
                   : PF + "person/noAvatar.jpg"
               }
               alt=""
@@ -87,7 +87,9 @@ export default function Share() {
                 name="file"
                 id="file"
                 accept=".png,.jpeg,.jpg"
-                onChange={(e) => setFile(e.target.files[0])}
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                }}
               />
             </label>
             <div className="shareOption">

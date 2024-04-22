@@ -35,6 +35,20 @@
   border: 3px solid white;
   cursor: pointer;
 }
+.cameraIconClass{
+  display: flex;
+  justify-content: center;
+}
+.cameraIcon{
+  height: 34px;
+  width: 34px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 30px;
+  margin-top: -10px;
+  cursor: pointer;
+}
 
 .profileInfo {
   display: flex;
@@ -54,6 +68,14 @@
 
 .profileRightBottom {
   display: flex;
+}
+
+.feedContainer{
+  flex: 5.5;
+}
+
+.profileRightbarContainer{
+  flex: 3.5;
 }
 
 .feedContainerForMobile {
